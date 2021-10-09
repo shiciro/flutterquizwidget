@@ -95,6 +95,31 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
           ),
+        Container(
+          height: 50,
+          width: double.infinity,
+          padding: EdgeInsets.all(10),
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3))
+              ]),
+          child: Row(
+            children: [
+              Text("Total " +
+                  ((global.listPrice[0] * global.listQuantity[0]) +
+                          (global.listPrice[1] * global.listQuantity[1]) +
+                          (global.listPrice[2] * global.listQuantity[2]))
+                      .toString())
+            ],
+          ),
+        ),
       ]),
     ));
   }
