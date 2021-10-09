@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget/BuyPage.dart';
+import 'global.dart' as global;
 
 //void main() {
 //  runApp(MyApp());
@@ -23,9 +24,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<String> listItem = ["Nama Barang 1", "Nama Barang 2", "Nama Barang 3"];
-  List<int> listPrice = [175000, 350000, 625000];
-  List<int> listQuantity = [1, 1, 1];
+  //List<String> listItem = ["Nama Barang 1", "Nama Barang 2", "Nama Barang 3"];
+  //List<int> listPrice = [175000, 350000, 625000];
+  //List<int> listQuantity = [1, 1, 1];
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         title: Text("Keranjang Belanja"),
       ),
       body: ListView(children: [
-        for (int i = 0; i < listItem.length; i++)
+        for (int i = 0; i < global.listItem.length; i++)
           Container(
             height: 130,
             width: double.infinity,
@@ -75,14 +76,14 @@ class _MyAppState extends State<MyApp> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              listItem[i],
+                              global.listItem[i],
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   fontSize: 15.0, fontWeight: FontWeight.bold),
                             ),
-                            Text('Harga ' + listPrice[i].toString()),
+                            Text('Harga ' + global.listPrice[i].toString()),
                             Text('Jumlah di keranjang ' +
-                                listQuantity[i].toString()),
+                                global.listQuantity[i].toString()),
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed("/buyPage");
