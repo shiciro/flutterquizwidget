@@ -42,7 +42,17 @@ class _BuyPageState extends State<BuyPage> {
                       blurRadius: 7,
                       offset: Offset(0, 3))
                 ]),
-            child: Column(children: [Container()]))
+            child: Row(children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.exposure_minus_1),
+              ),
+              Text("Jumlah barang"),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.plus_one),
+              )
+            ]))
       ]),
     );
   }
