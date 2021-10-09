@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                        image: AssetImage("images/image2.jpg"),
+                        image: AssetImage("images/image1.jpg"),
                         fit: BoxFit.fill,
                       ),
                       shape: BoxShape.rectangle),
