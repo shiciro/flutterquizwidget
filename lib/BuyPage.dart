@@ -9,6 +9,21 @@ class BuyPage extends StatefulWidget {
 }
 
 class _BuyPageState extends State<BuyPage> {
+  int _jumlah = 0;
+  void _increment() {
+    setState(() {
+      _jumlah++;
+    });
+  }
+
+  void _reduction() {
+    if (_jumlah > 0) {
+      setState(() {
+        _jumlah--;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,12 +60,16 @@ class _BuyPageState extends State<BuyPage> {
           child: Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  _reduction();
+                },
                 icon: Icon(Icons.exposure_minus_1),
               ),
-              Text("Jumlah barang"),
+              Text("Jumlah barang " + _jumlah.toString()),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  _increment();
+                },
                 icon: Icon(Icons.plus_one),
               )
             ],
