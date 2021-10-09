@@ -28,21 +28,22 @@ class _BuyPageState extends State<BuyPage> {
               shape: BoxShape.rectangle),
         ),
         Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            height: 100,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(0, 3))
-                ]),
-            child: Row(children: [
+          margin: EdgeInsets.all(10),
+          padding: EdgeInsets.all(10),
+          width: double.infinity,
+          height: 100,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3))
+              ]),
+          child: Row(
+            children: [
               IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.exposure_minus_1),
@@ -52,7 +53,9 @@ class _BuyPageState extends State<BuyPage> {
                 onPressed: () {},
                 icon: Icon(Icons.plus_one),
               )
-            ]))
+            ],
+          ),
+        ),
       ]),
     );
   }
