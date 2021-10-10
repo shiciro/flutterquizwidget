@@ -10,24 +10,24 @@ class BuyPage extends StatefulWidget {
 }
 
 class _BuyPageState extends State<BuyPage> {
-  int _jumlah = global.listQuantity[global.Q];
+  //int _jumlah = global.listQuantity[global.Q];
 
   void _confirm() {
     setState(() {
-      global.listQuantity[global.Q] = _jumlah;
+      global.listQuantity[global.Q] = global.transfer;
     });
   }
 
   void _increment() {
     setState(() {
-      _jumlah++;
+      global.listQuantity[global.Q]++;
     });
   }
 
   void _reduction() {
-    if (_jumlah > 0) {
+    if (global.listQuantity[global.Q] > 0) {
       setState(() {
-        _jumlah--;
+        global.listQuantity[global.Q]--;
       });
     }
   }
@@ -73,7 +73,7 @@ class _BuyPageState extends State<BuyPage> {
                 },
                 icon: Icon(Icons.exposure_minus_1),
               ),
-              Text("Jumlah barang " + _jumlah.toString()),
+              Text("Jumlah barang " + global.listQuantity[global.Q].toString()),
               IconButton(
                 onPressed: () {
                   _increment();

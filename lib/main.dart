@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget/BuyPage.dart';
+import 'package:provider/provider.dart';
 import 'global.dart' as global;
 
 //void main() {
@@ -24,9 +25,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  //List<String> listItem = ["Nama Barang 1", "Nama Barang 2", "Nama Barang 3"];
-  //List<int> listPrice = [175000, 350000, 625000];
-  //List<int> listQuantity = [1, 1, 1];
+  //void _update() {
+  //  setState(() {
+  //    global.listQuantity[global.Q] = global.transfer;
+  //  });
+  //}
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +85,14 @@ class _MyAppState extends State<MyApp> {
                                   fontSize: 15.0, fontWeight: FontWeight.bold),
                             ),
                             Text('Harga ' + global.listPrice[i].toString()),
-                            Text('Jumlah di keranjang ' +
-                                global.listQuantity[i].toString()),
+                            Text(
+                              'Jumlah di keranjang ' +
+                                  global.listQuantity[i].toString(),
+                            ),
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamed("/buyPage");
                                 global.Q = i;
+                                Navigator.of(context).pushNamed("/buyPage");
                               },
                               child: Text('Lihat Detail'),
                             ),
