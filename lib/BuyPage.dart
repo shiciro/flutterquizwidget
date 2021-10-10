@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:widget/main.dart';
-import 'global.dart' as global;
+import 'package:provider/provider.dart';
+import 'providers/transferVariables.dart' as global;
+import 'providers/global.dart';
 
 class BuyPage extends StatefulWidget {
   const BuyPage({Key? key}) : super(key: key);
@@ -12,26 +14,12 @@ class BuyPage extends StatefulWidget {
 class _BuyPageState extends State<BuyPage> {
   //int _jumlah = global.listQuantity[global.Q];
 
-  void _confirm() {
-    setState(() {
-      global.listQuantity[global.Q] = global.transfer;
-    });
-  }
-
-  void _increment() {
-    setState(() {
-      global.listQuantity[global.Q]++;
-    });
-  }
-
-  void _reduction() {
-    if (global.listQuantity[global.Q] > 0) {
-      setState(() {
-        global.listQuantity[global.Q]--;
-      });
-    }
-  }
-
+  //void _confirm() {
+  //  setState(() {
+  //    global.listQuantity[global.Q] = global.transfer;
+  //  });
+  //}
+  int urutan = global.Q;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,14 +57,15 @@ class _BuyPageState extends State<BuyPage> {
             children: [
               IconButton(
                 onPressed: () {
-                  _reduction();
+                  context.read<Database>().reduction();
                 },
                 icon: Icon(Icons.exposure_minus_1),
               ),
-              Text("Jumlah barang " + global.listQuantity[global.Q].toString()),
+              Text("Jumlah barang " +
+                  context.read<Database>().listQuantity[global.Q].toString()),
               IconButton(
                 onPressed: () {
-                  _increment();
+                  context.read<Database>().increment();
                 },
                 icon: Icon(Icons.plus_one),
               )
@@ -103,7 +92,7 @@ class _BuyPageState extends State<BuyPage> {
               IconButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  _confirm();
+                  //_confirm();
                 },
                 icon: Icon(Icons.check_circle),
               ),
