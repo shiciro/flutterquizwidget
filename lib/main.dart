@@ -11,7 +11,7 @@ void main() {
     home: new MyApp(),
     routes: <String, WidgetBuilder>{
       "/buyPage": (BuildContext context) => new BuyPage(),
-      //add more routes here
+      "/home": (BuildContext context) => new MyApp(),
     },
   ));
 }
@@ -87,6 +87,7 @@ class _MyAppState extends State<MyApp> {
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed("/buyPage");
+                                global.Q = i;
                               },
                               child: Text('Lihat Detail'),
                             ),
