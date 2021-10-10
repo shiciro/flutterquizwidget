@@ -62,7 +62,7 @@ class _BuyPageState extends State<BuyPage> {
                 icon: Icon(Icons.exposure_minus_1),
               ),
               Text("Jumlah barang " +
-                  context.read<Database>().listQuantity[global.Q].toString()),
+                  context.watch<Database>().listQuantity[global.Q].toString()),
               IconButton(
                 onPressed: () {
                   context.read<Database>().increment();
